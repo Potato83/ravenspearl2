@@ -2366,7 +2366,21 @@ $(function() {
     console.log( "ready!" );
     //$( ".gallery-thumb" ).first().addClass( "selected" );
     //$('.banner').addClass('shrunk');
-
+    $('.thumb>img').each(function(){
+    var high = $(this).attr('height');
+    var wide = $(this).attr('width');
+    var texty = $(this).closest('a').next('a');
+    // console.log("height: " + high);
+    // console.log("width: " + wide);
+    //console.log(texty);
+    if(high > wide){
+      console.log("wide");
+      $(this).addClass("fuzzy");
+      $(texty).addClass("wuzzy");
+    } else if (wide > high){
+      console.log("tall");
+    }
+  });
 });
 
 

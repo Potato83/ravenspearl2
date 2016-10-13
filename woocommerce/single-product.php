@@ -56,7 +56,27 @@ get_header( 'shop' ); ?>
 		//do_action( 'woocommerce_sidebar' );
 	?>
 <div class="center">
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Back</a>
+	<?php 
+
+
+$parent=get_permalink();
+	if (preg_match("/tiles/", $parent)) {
+    $dad = "tiles";
+    //echo $dad;
+	} else if (preg_match("/sculpture/", $parent)){
+		$dad = "sculpture";
+    //echo $dad;
+	} else if (preg_match("/ceramic/", $parent)){
+		$dad = "ceramics";
+    //echo $dad;
+	} else {
+		$dad = "";
+    //echo $dad;
+	}
+?>
+
+<a href="<?php echo esc_url( home_url( '/' ) ) . $dad ?>">Back</a>
+	
 </div>
 <?php get_footer( 'shop' ); ?>
 

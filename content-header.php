@@ -44,9 +44,14 @@ console.log(hitherto);
 // 	});
 // }
 
+var HereNow = '<?php the_title(); ?>';
+if(HereNow == "Tiles" || HereNow == "Ceramics" || HereNow == "Sculpture"){
+	HereNow = 'workpage';
+}
+
  if(hitherto == 'elsewhere'){
 	$(function() {
-		$('i.to-top').addClass('hide');
+		//$('i.to-top').addClass('hide');
 		setTimeout(
 		  function() 
 		  {
@@ -61,19 +66,32 @@ console.log(hitherto);
     
 
 	});
-} else if (hitherto == 'home'){
+} else if (hitherto == 'home' && HereNow == "workpage"){
+	$(function() {
+		$('i.to-top').addClass('hide');
+    $('.banner').addClass('native-shrunk');
+    $('html, body').animate({ scrollTop: 700 }, 500);
+
+	});
+} else if (hitherto == 'home' ){
 	$(function() {
 		$('i.to-top').addClass('hide');
     $('.banner').addClass('native-shrunk');
     $('html, body').animate({ scrollTop: 60 }, 500);
 
 	});
+} else if (hitherto == 'work' && HereNow == "workpage"){
+	$(function() {
+   $('.banner').addClass('native-shrunk');
+   $('html, body').animate({ scrollTop: 700 }, 500);
+  });
 } else if (hitherto == 'work'){
 	$(function() {
    $('.banner').addClass('native-shrunk');
-   console.log('no funny scroll today!');
+   //console.log('no funny scroll today!');
+   $('html, body').animate({ scrollTop: 60 }, 500);
   });
 }
-
+console.log(HereNow);
 </script>
 

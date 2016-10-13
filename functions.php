@@ -12,6 +12,7 @@ if( function_exists('acf_add_options_page') ) {
 	
 
 	acf_add_options_page('Bios');
+	acf_add_options_page('Covers');
 
 	
 }
@@ -212,7 +213,7 @@ function wrap_link_before() {
 add_action('sam_wrap_after', 'wrap_link_after');
 
 function wrap_link_after() {
-	echo '</div>';
+	echo '</div>title()';
 }
 
 /**  BLOG / read more **/

@@ -3,15 +3,18 @@
 Template Name: Sculpture Page
  */
 get_header();
-get_template_part('content', 'header-lite');
+get_template_part('content', 'header');
 
 
 ?>
 
-<div class="padder"></div>
+
+<div class="cover-padder"></div>
+<?php get_template_part('content', 'covers'); ?>
 <div class="fullwidth">
 	<div class="work-title">sculpture</div>
 </div>
+
 
 <?php
 $args = array(  'post_type' => 'product', 
@@ -35,7 +38,23 @@ while ( $loop->have_posts() ) : $loop->the_post();
 		<a href="<?php echo the_permalink(); ?>" class="clearfix">info</a>
 	</li>
 <?php endwhile;
- wp_reset_query(); ?>
+wp_reset_query(); ?>
+<div class="clearfix"></div>
+<div class="cover-padder"></div>
+<script>
+	// console.log('sculpture page');
+	// $('.thumb>img').each(function(){
+	// 	var high = $(this).attr('height');
+	// 	var wide = $(this).attr('width');
+	// 	console.log("height: " + high);
+	// 	console.log("width: " + wide);
+	// 	if(high > wide){
+	// 		console.log("wide");
+	// 	} else if (wide > high){
+	// 		console.log("tall");
+	// 	}
+	// });
+</script>
 
 <?php //get_template_part('content', 'sidebar'); ?>
-<?php //get_footer(); ?>
+<?php get_footer(); ?>

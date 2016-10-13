@@ -3,12 +3,13 @@
 Template Name: Ceramics Page
  */
 get_header();
-get_template_part('content', 'header-lite');
+get_template_part('content', 'header');
 
 
 ?>
 
-<div class="padder"></div>
+<div class="cover-padder"></div>
+<?php get_template_part('content', 'covers'); ?>
 <div class="fullwidth">
 	<div class="work-title">ceramics</div>
 </div>
@@ -36,7 +37,8 @@ while ( $loop->have_posts() ) : $loop->the_post();
 		<a href="<?php echo the_permalink(); ?>" class="clearfix">info</a>
 	</li>
 <?php endwhile;
- wp_reset_query(); ?>
-
+wp_reset_query(); ?>
+<div class="clearfix"></div>
+<div class="cover-padder"></div>
 <?php //get_template_part('content', 'sidebar'); ?>
-<?php //get_footer(); ?>
+<?php get_footer(); ?>

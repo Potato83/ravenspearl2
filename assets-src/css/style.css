@@ -58,7 +58,7 @@ li.product-category{
 }
 
 li.product a.clearfix{
-	color: transparent;
+	color: transparent; 
 	transition: color 0.3s;
 }
 
@@ -89,6 +89,11 @@ li.product-category > h3{
 .padder{
 	width: 100%;
 	height: 25px;
+}
+
+.cover-padder{
+	width: 100%;
+	height: 120px;
 }
 
 .spacer{
@@ -270,17 +275,14 @@ li.current-menu-item > a{
 	cursor: pointer;
 }
 
-
-
-.covers{
-	/*width: 100%;*/
-	/*height: auto;*/
-	/*background: yellow;*/
-	/*text-align: center;*/
+.main-covers{
+	/*background: red;*/
+	margin: -75px auto 50px;
 }
 
-.gallery-thumb img{
-	max-width: 100%;
+
+.gallery-thumb{
+	text-align: center;
 }
 
 .discipline{
@@ -293,46 +295,20 @@ li.current-menu-item > a{
 	margin: auto;
 	box-sizing: border-box;
 	background: transparent;
-	opacity: 0;
+	opacity: 1;
 	padding: 0;
 	border-radius: 20px;
-
+	text-align: center;
+	max-width: 300px;
 }
 
 .discipline:hover{
-	/*background: rgba(0,0,0,0.4);*/
-	/*opacity: 1;*/
-	/*cursor: pointer;*/
-	/*width: 90%;*/
-	/*height: 90%;*/
+	cursor: pointer;
 }
-
-
-/*.gallery-thumb:after{
-	display:block;
-  content: '';
-  border-bottom: solid 3px #473E73;  
-  transform: scaleX(0);  
-  transition: transform 250ms ease-in-out;
-  bottom: -20px;
-  padding-bottom: -5px;
-}
-
-
-
-.gallery-thumb.selected:after {
-  transform: scaleX(1);
-}*/
 
 .covers.darken {
     display: inline-block;
-    background: black;
-    /*padding: 0px;*/
-    /*padding-bottom: 0 !important;*/
-    /*max-height: 100%;*/
-    /*margin-bottom: 20px;*/
-
-
+    background: #111; 
 }
 
 .covers.darken.selected img{
@@ -348,6 +324,9 @@ li.current-menu-item > a{
          -o-transition: all 0.2s linear;
             transition: all 0.2s linear;
    	padding-bottom: 0px;
+   	max-width: 100%;
+   	height: auto;
+   	
 }
 
 .covers.darken:hover img {
@@ -367,7 +346,7 @@ li.current-menu-item > a{
 }
 
 .thumb.darken:hover{
-	background: black;
+	background: transparent;
 }
 
 .thumb.darken img {
@@ -378,9 +357,6 @@ li.current-menu-item > a{
         -ms-transition: all 0.2s linear;
          -o-transition: all 0.2s linear;
             transition: all 0.2s linear;
-    /*max-width: 100%;*/
-    /*min-height: 250px;*/
-    /*min-height: 500px;*/
 }
 
 .thumb.darken:hover img {
@@ -397,13 +373,12 @@ li.current-menu-item > a{
 	bottom: 0;
 	left: 0;
 	margin: auto;
-	/*border: 5px solid blue;*/
 	height: 30px;
 	width: 50%;
 	opacity: 1;
-	/*background: rgba(0,0,0,0.4);*/
 	color: #fff;
 	font-size: 22px;
+	z-index: 999;
 }
 
 .product > a > img{
@@ -430,8 +405,6 @@ li.current-menu-item > a{
 	font-size: 24px;
 }
 
-
-
 .bio::after {
   content: "";
   background: url(http://localhost:8888/ravenspearl/html/wp-content/uploads/2016/10/mUltifoRmer.jpg) no-repeat;
@@ -455,36 +428,6 @@ li.current-menu-item > a{
 	z-index: 5;
 }
 
-/*.menu-closer{
-	color: #eee;
-	font-size: 26px !important;
-	position:	absolute;
-	left: 215px;
-	top: 7px;
-	z-index: 4;
-	cursor: pointer;
-}
-
-.menu-closer:hover{
-	color: #fff;
-}*/
-
-/*.show-menu{
-	position: absolute;
-	right: -6px;
-	z-index: 3;
-	top: 405px;
-	color: #bbb;
-}
-
-.sidebar{
-	background: red;
-	position: fixed;
-	right: 80px;
-	top: 510px;
-	text-align: right;
-	
-}*/
 
 .menu-ul > ul{
 	list-style: none;
@@ -597,6 +540,24 @@ li.current-menu-item > a{
   padding: 10px 20px;
 }
 
+.fuzzy{
+	padding-top: 25%;
+	padding-bottom: 25%;
+}
+
+.wuzzy{	 
+	position: relative;
+}
+
+@media (max-width: 991px){
+	.fuzzy{
+		padding: 0;
+	}
+	.wuzzy{	 
+		position: static;
+	}
+}
+
 /* TILED IMAGES (QUERY) */
 @media (max-width: 767px){
 	li.product.col-md-4{
@@ -624,6 +585,9 @@ li.current-menu-item > a{
 		width: auto;
 		margin: 0 auto;
 	}
+	.wuzzy{
+		top: -75px;
+	}
 }
 
 @media (min-width: 1024px) and (max-width: 1149px){
@@ -637,6 +601,9 @@ li.current-menu-item > a{
 		max-height: 350px;
 		width: auto;
 		margin: 0 auto;
+	}
+	.wuzzy{
+		top: -75px;
 	}
 }
 
@@ -653,18 +620,25 @@ li.current-menu-item > a{
 		width: auto;
 		margin: 0 auto;
 	}
+	.wuzzy{
+		top: -80px;
+	}
 }
 
 @media (min-width: 1400px){
 	li.product.col-md-4{
-		min-height: 480px;
+		/*min-height: 720px;*/
 		/*background: blue;*/
+		/*border: 1px solid #000;*/
 		text-align: center;
 	}
 	li.product.col-md-4 > a > div > img{
-		max-height: 430px;
-		width: auto;
+		height: auto;
+		max-width: 100%;
 		margin: 0 auto;
+	}
+	.wuzzy{
+		top: -105px;
 	}
 }
 
