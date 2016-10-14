@@ -13,7 +13,7 @@ get_template_part('content', 'header');
 		
 
 		<div class="padder"></div>
-			<div class="container blog-container">
+			<div class="container blog-container contact-container">
 				<div class="row">
 					<div class="col-md-12">
 						<h1 class="center">CONTACT</h1>

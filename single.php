@@ -17,7 +17,6 @@ get_template_part('content', 'header');
 			<div class="container blog-container">
 				<div class="row">
 					<div class="col-md-12">
-			<h4>single.php</h4>
 		<?php
 		while ( have_posts() ) : the_post();
 

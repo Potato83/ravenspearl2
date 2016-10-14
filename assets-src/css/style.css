@@ -441,8 +441,72 @@ li.current-menu-item > a{
 
 /* BLOG */
 .blog-container{
-	background: #ccc;
+	background: #333;
 	padding: 30px; /* query */
+	color: #fbfbfb;
+}
+
+.blog-container a{
+	color: #e0e0e0;
+}
+
+.contact-container{
+	background: url(http://ravenspearl.com/wp-content/uploads/2016/10/IMGP9302.jpg) no-repeat;
+	background-size: cover;
+}
+
+.index-container{
+	background: url(http://ravenspearl.com/wp-content/uploads/2016/09/IMGP9271.jpg) no-repeat;
+	background-size: cover;
+}
+
+.img-box{
+	width: 100%;
+	/*background: red;*/
+	text-align: center;
+}
+
+.img-box > img{
+	margin: 0 auto;
+}
+
+.entry-meta{
+	text-align: right;
+	margin-bottom: 20px;
+}
+
+.jp-carousel-info h2,
+.jp-carousel-titleanddesc-title,
+.jp-carousel-image-meta,
+.jp-carousel-info {
+	display:none !important;
+}
+
+.gallery-row{
+	margin: 20px auto 0;
+}
+
+.single-preview{
+	/*background: red;*/
+	/*min-height: 540px; */
+	/*margin: 10px;*/
+	padding: 5px;
+}
+
+.preview-inner{
+	background: rgba(150,150,150,0.7);
+	padding: 15px;
+	width: 100%;
+	transition: background 0.25s;
+}
+
+.preview-inner a:hover{
+	text-decoration: none;
+}
+
+.preview-inner:hover{
+	background: rgba(150,150,150,0.5);
+	transition: background 0.25s;
 }
 
 /*.sidebar{
@@ -483,16 +547,16 @@ li.current-menu-item > a{
 .list-group{
 	border: 1px solid #333;
 	border-radius: 4px;
-	background: #bbb;
-	text-align: right;
+	background: #2a2a2a; /* main color */
+	text-align: left;
 	/*padding-right: 15px;*/
 }
 
 .mini-submenu{
   display:none;  
-  background-color: #ccc;  
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: 4px;
+  /*background-color: red;  */
+  /*border: 1px solid rgba(255, 255, 255, 0.9);*/
+  /*border-radius: 4px;*/
   padding: 9px;  
   position: relative;
   width: 42px;
@@ -508,7 +572,7 @@ li.current-menu-item > a{
 }
 
 .mini-submenu .icon-bar {
-  background-color: #fff;
+  background-color: #bbb;
 }
 
 #slide-submenu{
@@ -516,6 +580,7 @@ li.current-menu-item > a{
   display: inline-block;
   padding: 0 8px;
   border-radius: 4px;*/
+  color: #666;
 }
 
 .list-group-item,
@@ -534,7 +599,7 @@ li.cat-item>a{
 
 .list-group-item.active,
 .list-group-item.active:hover{
-	background: #aaa;
+	background: #222;
 	border: none;
 }
 
@@ -556,14 +621,14 @@ a.list-group-item, button.list-group-item {
 		border: none;
 }
 
-ul.children > li {
+/*ul.children > li {
 	border: none;
 	border-radius: 4px;
-}
+}*/
 
-ul.children > li:hover{
-	background-color: #333;
-}
+/*ul.children > li:hover{
+	background-color: red;
+}*/
 
 .search-form{
 	display: inline-block;
@@ -573,6 +638,11 @@ ul.children > li:hover{
 	border-radius: 4px;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	font-weight: lighter;
+}
+
+input[name=s]{
+	line-height: 25px;
+	margin-right: 5px;
 }
 
 /* Comments (copied) */
@@ -643,6 +713,7 @@ ul.children > li:hover{
 
 .entry-footer {
   padding: 10px 20px;
+  text-align: right;
 }
 
 .fuzzy{
@@ -661,6 +732,28 @@ ul.children > li:hover{
 	.wuzzy{	 
 		position: static;
 	}
+}
+
+/* Youtube */
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; 
+	padding-top: 25px;
+	height: 0;
+	/*background: red;*/
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.vid-box{
+	/*background: green;*/
+	max-width: 700px;
+	margin: 0 auto;
 }
 
 /* TILED IMAGES (QUERY) */

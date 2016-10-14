@@ -6,33 +6,35 @@
  *
  * @package RavensPearl
  */
-
+$video = get_field('video');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) {
-				the_title( '<h1 class="entry-title">', '</h1>' );
+				the_title( '<h1 class="entry-title center">', '</h1>' );
 			} else {
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
-	  if(has_post_thumbnail()){ 
-				
-				
-					echo the_post_thumbnail( 'thumbnail');
-					echo '<div class="padder"></div>';
-				} else{
-					echo '';
-				}
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php ravenspearl_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
-		endif; ?>
+		endif; 	
+	  if(has_post_thumbnail()){ 
+				
+					echo '<div class="img-box">';
+					echo the_post_thumbnail( 'large', array( 'class'  => 'img-responsive' ));
+					echo '<div class="padder"></div></div>';
+				} else{
+					echo '';
+				}
+		?>
+		
 	</header><!-- .entry-header -->
-
+	
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
@@ -46,7 +48,16 @@
 				'after'  => '</div>',
 			) );
 		?>
+		<?php 
+  if($video) { ?>
+  	<div class="vid-box">
+    <div class="videoWrapper">
+    <?php echo $video; ?>
+    </div><!-- embed-container -->
+    </div>
+<?php } ?>
 	</div><!-- .entry-content -->
+	
 
 	<footer class="entry-footer">
 		<?php ravenspearl_entry_footer(); ?>

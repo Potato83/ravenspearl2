@@ -37,8 +37,8 @@ get_template_part('content', 'header');
 			
 			<div class="container ">
 				<div class="row">
-					<div class="col-md-10 col-md-offset-1 blog-container">
-		
+					<div class="col-md-10 col-md-offset-1 blog-container index-container">
+						<div class="row">
 		<?php	/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
@@ -48,11 +48,14 @@ get_template_part('content', 'header');
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
 				//get_template_part( 'template-parts/content', get_post_format() ); ?>
-				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>	
+				
+				<div class="single-preview col-md-4">
+					<div class="preview-inner"><a href="<?php the_permalink(); ?>">
+				<h2 class="center"><?php the_title(); ?></h2>	
 				<?php  if(has_post_thumbnail()){ ?>
 				
 				<?php
-					echo the_post_thumbnail( 'thumbnail');
+					echo the_post_thumbnail( 'full', array( 'class'  => 'img-responsive' ));
 					echo '<div class="padder"></div>';
 				} else{
 					echo '';
@@ -60,22 +63,22 @@ get_template_part('content', 'header');
 
 				the_excerpt();
 				echo '<hr>';
-			endwhile;
+				echo '</a></div></div><!-- single-preview -->';
+			endwhile; ?>
+			
 
-			//the_posts_navigation();
-			// ^ not defined
+			<?php
 
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
-					</div><!-- col-md-8 -->
-					<!-- <div class="sidebar"> -->
-						<?php get_template_part('content', 'sidebar'); ?>
-					<!-- </div> -->
+						</div>
+					</div><!-- col-md-10 -->
 				</div><!-- row -->
 			</div><!-- blog-container -->
+			<?php get_template_part('content', 'sidebar'); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	<div class="padder"></div>

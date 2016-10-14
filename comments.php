@@ -77,6 +77,6 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'sex-t-rex' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php comment_form(array( 'class_submit'  => 'btn' )); ?>
 
 </div><!-- #comments -->

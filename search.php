@@ -12,7 +12,6 @@ get_template_part('content', 'header'); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			
 		<?php
 		if ( have_posts() ) : ?>
 
@@ -21,7 +20,7 @@ get_template_part('content', 'header'); ?>
 			</header><!-- .page-header -->
 			<div class="container blog-container">
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-md-12">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -39,9 +38,9 @@ get_template_part('content', 'header'); ?>
 			?>
 
 					</div>
-					<div class="col-md-4">
-						<?php get_template_part('content', 'sidebar'); ?>
-					</div>
+					
+						
+					
 
 			<?php
 		else :
@@ -54,6 +53,7 @@ get_template_part('content', 'header'); ?>
 					</div>
 				</div><!-- row -->
 			</div><!-- blog-container -->
+			<?php get_template_part('content', 'sidebar'); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	<div class="padder"></div>
