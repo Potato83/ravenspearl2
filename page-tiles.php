@@ -10,6 +10,7 @@ get_template_part('content', 'header');
 
 <div class="cover-padder"></div>
 <?php get_template_part('content', 'covers'); ?>
+<p id="gallery"></p>
 <div class="fullwidth">
 	<div class="work-title">tiles</div>
 </div>
@@ -39,6 +40,9 @@ while ( $loop->have_posts() ) : $loop->the_post();
 <?php endwhile;
  wp_reset_query(); ?>
 <div class="clearfix"></div>
+<div class="padder"></div>
+<div class="center col-md-12">
+	<i class="fa fa-chevron-up to-top"></i>
+</div>
 <div class="cover-padder"></div>
-<?php //get_template_part('content', 'sidebar'); ?>
 <?php get_footer(); ?>

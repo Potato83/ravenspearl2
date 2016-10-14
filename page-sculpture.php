@@ -11,6 +11,7 @@ get_template_part('content', 'header');
 
 <div class="cover-padder"></div>
 <?php get_template_part('content', 'covers'); ?>
+<p id="gallery"></p>
 <div class="fullwidth">
 	<div class="work-title">sculpture</div>
 </div>
@@ -40,21 +41,9 @@ while ( $loop->have_posts() ) : $loop->the_post();
 <?php endwhile;
 wp_reset_query(); ?>
 <div class="clearfix"></div>
+<div class="padder"></div>
+<div class="center col-md-12">
+	<i class="fa fa-chevron-up to-top"></i>
+</div>
 <div class="cover-padder"></div>
-<script>
-	// console.log('sculpture page');
-	// $('.thumb>img').each(function(){
-	// 	var high = $(this).attr('height');
-	// 	var wide = $(this).attr('width');
-	// 	console.log("height: " + high);
-	// 	console.log("width: " + wide);
-	// 	if(high > wide){
-	// 		console.log("wide");
-	// 	} else if (wide > high){
-	// 		console.log("tall");
-	// 	}
-	// });
-</script>
-
-<?php //get_template_part('content', 'sidebar'); ?>
 <?php get_footer(); ?>

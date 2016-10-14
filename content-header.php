@@ -22,27 +22,6 @@ $ref=@$_SERVER[HTTP_REFERER];
 ?>';	
 console.log(hitherto);
 
-// var testing = '<?php echo get_permalink(); ?>';
-// var workpage = '<?php  
-// 	$ref= get_permalink();
-// 	if (preg_match("/work/", $ref)) {
-//     $referer = "workpage";
-//     echo $referer;
-// 	}else{
-// 		$referer = "not workpage";
-//     echo $referer;
-// 	}
-// ?>';
-
-// console.log("page: " + workpage);
-
-// if(workpage == 'workpage'){
-	
-// 	$(function() {
-//   	$('html, body').animate({ scrollTop: 380 }, 50);
-
-// 	});
-// }
 
 var HereNow = '<?php the_title(); ?>';
 if(HereNow == "Tiles" || HereNow == "Ceramics" || HereNow == "Sculpture"){
@@ -68,14 +47,14 @@ if(HereNow == "Tiles" || HereNow == "Ceramics" || HereNow == "Sculpture"){
 	});
 } else if (hitherto == 'home' && HereNow == "workpage"){
 	$(function() {
-		$('i.to-top').addClass('hide');
+		//$('i.to-top').addClass('hide');
     $('.banner').addClass('native-shrunk');
-    $('html, body').animate({ scrollTop: 700 }, 500);
+    //$('html, body').animate({ scrollTop: 700 }, 500);
 
 	});
 } else if (hitherto == 'home' ){
 	$(function() {
-		$('i.to-top').addClass('hide');
+		//$('i.to-top').addClass('hide');
     $('.banner').addClass('native-shrunk');
     $('html, body').animate({ scrollTop: 60 }, 500);
 
@@ -83,7 +62,7 @@ if(HereNow == "Tiles" || HereNow == "Ceramics" || HereNow == "Sculpture"){
 } else if (hitherto == 'work' && HereNow == "workpage"){
 	$(function() {
    $('.banner').addClass('native-shrunk');
-   $('html, body').animate({ scrollTop: 700 }, 500);
+   //$('html, body').animate({ scrollTop: 700 }, 500);
   });
 } else if (hitherto == 'work'){
 	$(function() {

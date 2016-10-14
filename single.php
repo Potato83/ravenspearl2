@@ -16,7 +16,7 @@ get_template_part('content', 'header');
 			<div class="padder"></div>
 			<div class="container blog-container">
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-md-12">
 			<h4>single.php</h4>
 		<?php
 		while ( have_posts() ) : the_post();
@@ -33,9 +33,9 @@ get_template_part('content', 'header');
 		endwhile; // End of the loop.
 		?>
 					</div><!-- col-md-8 -->
-					<div class="col-md-4 sidebar">
+					
 						<?php get_template_part('content', 'sidebar'); ?>
-					</div>
+					
 				</div><!-- row -->
 			</div><!-- blog-container -->
 		</main><!-- #main -->

@@ -2364,15 +2364,11 @@ if (typeof jQuery === 'undefined') {
 
 $(function() {
     console.log( "ready!" );
-    //$( ".gallery-thumb" ).first().addClass( "selected" );
-    //$('.banner').addClass('shrunk');
+    // gallery adjust
     $('.thumb>img').each(function(){
     var high = $(this).attr('height');
     var wide = $(this).attr('width');
     var texty = $(this).closest('a').next('a');
-    // console.log("height: " + high);
-    // console.log("width: " + wide);
-    //console.log(texty);
     if(high > wide){
       console.log("wide");
       $(this).addClass("fuzzy");
@@ -2381,26 +2377,44 @@ $(function() {
       console.log("tall");
     }
   });
-});
 
-
-$('.link-spoof').each(function(){
-	$butt = $(this);
-	var path = '#bio-' + $butt.attr('id');
-	$butt.click(function(){
-		$(path).fadeIn(400).removeClass('hide').promise().done(function(){
-      $('body').addClass('no-scroll');
+    // bio, mission
+    $('.link-spoof').each(function(){
+      $butt = $(this);
+      var path = '#bio-' + $butt.attr('id');
+      $butt.click(function(){
+        $(path).fadeIn(400).removeClass('hide').promise().done(function(){
+          $('body').addClass('no-scroll');
+        });
+        
+      });
     });
-		
-	});
-});
 
-$('.closer').click(function(){
-	$( '.bio' ).fadeOut(400);
-  $('body').removeClass('no-scroll');
-  
-  
-});
+    $('.closer').click(function(){
+      $( '.bio' ).fadeOut(400);
+      $('body').removeClass('no-scroll');
+
+    });
+
+    //sidebar
+    // sidebar
+    $(function(){
+      $('.mini-submenu').show();
+      $('#slide-submenu').on('click',function() {           
+            $(this).closest('.list-group').toggle();
+              $('.mini-submenu').removeClass('sneaky').fadeIn(150);
+            
+          });
+
+      $('.mini-submenu').on('click',function(){   
+            $(this).next('.list-group').toggle();
+            $('.mini-submenu').hide();
+        });
+      });
+}); // document ready
+
+
+
 
 $( document ).on( 'keydown', function ( e ) {
     if ( e.keyCode === 27 ) { // ESC
@@ -2410,79 +2424,23 @@ $( document ).on( 'keydown', function ( e ) {
   	}
 });
 
-// $('.covers').each(function(){
-//   $cover = $(this);
-//   var id = $cover.attr('id'); 
-//   var section = '#' + id + '-gall';
-//   $cover.click(function(){
-//     $(this).addClass('selected');
-//     $(this).siblings().removeClass('selected');
-
-//     if($('#wrapper').hasClass("toggled")){
-//       $('.gall').fadeOut(150).promise().done(function(){
-        
-//         scrollToSection( '#gallery' );
-//         $(section).fadeIn(800).removeClass('hide');
-//     });
-//     }else{
-//       $("#wrapper").addClass("toggled");
-//       $('.gall').fadeOut(50);
-        
-//         scrollToSectionPlus( '#gallery' );
-//         $(section).fadeIn(800).removeClass('hide');
-    
-//     }
-    
-    
-//   });
-// });
 
 $('.gallery-thumb').each(function(){
   $cover = $(this);
   $cover.click(function(){
     $(this).addClass('selected');
     $(this).parents('li.product-category').siblings('li.product-category').children('div.gallery-thumb').removeClass('selected');
-    // $('i.to-top').removeClass('hide');
-    // alert('ok');
   });
 });
 
 
-
-// $(".menu-toggle").click(function(e) {
-//     e.preventDefault();
-//     $("#wrapper").toggleClass("toggled");
-//     console.log("toggle");
-// });
 
 $('.to-top').click(function(){
   $('body').animate({ scrollTop: 0 }, 400);
 });
 
 
-//$('.covers').on('click', function(e){
 
-
-    // scrollToSection( '#gallery' );
-    
-    // return false;
-//  })
-
-// function scrollToSection( section_name ){
-
-//   var scroll_to = $(section_name).offset().top;
-//   $('html, body').animate({ scrollTop: scroll_to }, 650, function(){
-//     window.location.hash = section_name;
-//   } );
-// }
-
-// function scrollToSectionPlus( section_name ){
-
-//   var scroll_to = $(section_name).offset().top + 100;
-//   $('html, body').animate({ scrollTop: scroll_to }, 600, function(){
-//     window.location.hash = section_name;
-//   } );
-// }
 
 
  

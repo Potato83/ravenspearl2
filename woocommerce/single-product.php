@@ -75,7 +75,7 @@ $parent=get_permalink();
 	}
 ?>
 
-<a href="<?php echo esc_url( home_url( '/' ) ) . $dad ?>">Back</a>
+<a href="<?php echo esc_url( home_url( '/' ) ) . $dad ?>/#gallery">Back</a>
 	
 </div>
 <?php get_footer( 'shop' ); ?>
