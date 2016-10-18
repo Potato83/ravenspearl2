@@ -7,7 +7,7 @@
 <script>
 $(function() {
    
-    $('html, body').animate({ scrollTop: 385 }, 400);
+    $('html, body').animate({ scrollTop: 525 }, 400);
 
 	});
 </script>

@@ -18,9 +18,10 @@ get_template_part('content', 'header'); ?>
 			<header class="page-header center">
 				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'ravenspearl' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
-			<div class="container blog-container">
+			<div class="container ">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-10 col-md-offset-1 blog-container index-container">
+						<!-- <div class="row"> -->
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -50,10 +51,12 @@ get_template_part('content', 'header'); ?>
 		endif; ?>
 
 		
-					</div>
+					<!-- </div> -->
+					</div><!-- col-md-10 -->
+					<?php get_template_part('content', 'sidebar'); ?>
 				</div><!-- row -->
 			</div><!-- blog-container -->
-			<?php get_template_part('content', 'sidebar'); ?>
+			
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	<div class="padder"></div>

@@ -15,6 +15,7 @@
 </div><!-- .main-container -->
 <footer class="custom-foot">
 	<p>&copy; <?php echo date('Y'); ?> Raven's Pearl</p>
+	<p><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></p>
 </footer>
 
 

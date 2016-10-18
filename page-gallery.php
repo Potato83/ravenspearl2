@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Ceramics Page
+Template Name: Gallery Page
  */
 get_header();
 get_template_part('content', 'header');
@@ -12,12 +12,13 @@ get_template_part('content', 'header');
 <?php get_template_part('content', 'covers'); ?>
 <p id="gallery"></p>
 <div class="fullwidth">
-	<div class="work-title">ceramics</div>
+	<div class="work-title"><?php echo $title =  get_the_title(); ?></div>
 </div>
 
 <?php
+
 $args = array(  'post_type' => 'product', 
- 								'product_cat' => 'ceramics',
+ 								'product_cat' => $title,
  								'posts_per_page' => -1,
  								'columns' => '3',  							
  								);
@@ -44,6 +45,6 @@ wp_reset_query(); ?>
 <div class="center col-md-12">
 	<i class="fa fa-chevron-up to-top"></i>
 </div>
-<div class="cover-padder"></div>
+<div class="cover-padder downlo"></div>
 
 <?php get_footer(); ?>

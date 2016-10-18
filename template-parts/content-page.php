@@ -18,7 +18,7 @@ get_template_part('content', 'header'); ?>
 		<div class="container blog-container">
 				<div class="row">
 					<div class="col-md-12">
-		whoa la (template-parts/content-page.php)
+		<!-- whoa la (template-parts/content-page.php) -->
 		<?php
 			the_content();
 

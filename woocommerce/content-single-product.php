@@ -84,12 +84,13 @@ get_template_part('content', 'header-work'); ?>
 </div><!-- #product-<?php the_ID(); ?> -->
 
 <?php //do_action( 'woocommerce_after_single_product' ); ?>
+<?php //get_footer(); ?>
 <script>
 $(function() {
     console.log( "hello you are on a product page!" );
     
     
-    	// $('html, body').animate({ scrollTop: 60 }, 400);
+    	 //$('html, body').animate({ scrollTop: 550 }, 400);
     
 });
 </script>

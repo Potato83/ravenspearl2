@@ -16,12 +16,14 @@
       </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav" id="menu-custom-menu">
+                <li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Home' ) ) ); ?>">Home</a></li>
+                <!-- <li class="spacer">&bull;</li> -->
                 <li class="link-spoof" id="one">Bio</li>
-                <li class="spacer">&bull;</li>
+                <!-- <li class="spacer">&bull;</li> -->
                 <li class="link-spoof" id="two">Mission Statement</li>
-                <li class="spacer">&bull;</li>
+                <!-- <li class="spacer">&bull;</li> -->
                 <li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ); ?>">Blog</a></li>
-                <li class="spacer">&bull;</li>
+                <!-- <li class="spacer">&bull;</li> -->
                 <li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Contact' ) ) ); ?>">Contact</a></li>
               </ul>
             </div>

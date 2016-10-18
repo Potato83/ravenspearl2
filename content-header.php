@@ -24,51 +24,62 @@ console.log(hitherto);
 
 
 var HereNow = '<?php the_title(); ?>';
-if(HereNow == "Tiles" || HereNow == "Ceramics" || HereNow == "Sculpture"){
+if(HereNow == "tiles" || HereNow == "ceramics" || HereNow == "sculpture"){
 	HereNow = 'workpage';
 }
 
  if(hitherto == 'elsewhere'){
 	$(function() {
 		//$('i.to-top').addClass('hide');
+		console.log('hitherto == "elsewhere"');
 		setTimeout(
 		  function() 
 		  {
 		    $('.banner').addClass('shrunk');
-		  }, 1500);
+		  }, 3475);
    
    setTimeout(
 		  function() 
 		  {
-		    $('html, body').animate({ scrollTop: 60 }, 2000);
-		  }, 4000);
+		    $('html, body').animate({ scrollTop: 220 }, 2750);
+		  }, 1250);
+
+   // setTimeout(
+		 //  function() 
+		 //  {
+		 //    $('html, body').animate({ scrollTop: 225 }, 1000);
+		 //  }, 3500);
     
 
 	});
-} else if (hitherto == 'home' && HereNow == "workpage"){
+} else if (hitherto == "home" && HereNow == "workpage"){
 	$(function() {
 		//$('i.to-top').addClass('hide');
     $('.banner').addClass('native-shrunk');
     //$('html, body').animate({ scrollTop: 700 }, 500);
+    console.log('hitherto == "home" && HereNow == "workpage"');
 
 	});
 } else if (hitherto == 'home' ){
 	$(function() {
 		//$('i.to-top').addClass('hide');
     $('.banner').addClass('native-shrunk');
-    $('html, body').animate({ scrollTop: 60 }, 500);
+    $('html, body').animate({ scrollTop: 220 }, 500);
+    console.log('hitherto == "home"');
 
 	});
 } else if (hitherto == 'work' && HereNow == "workpage"){
 	$(function() {
    $('.banner').addClass('native-shrunk');
    //$('html, body').animate({ scrollTop: 700 }, 500);
+   console.log('hitherto == "work" && HereNow == "workpage"');
   });
 } else if (hitherto == 'work'){
 	$(function() {
    $('.banner').addClass('native-shrunk');
    //console.log('no funny scroll today!');
-   $('html, body').animate({ scrollTop: 60 }, 500);
+   $('html, body').animate({ scrollTop: 220 }, 500);
+   console.log('hitherto == "work"');
   });
 }
 console.log(HereNow);
