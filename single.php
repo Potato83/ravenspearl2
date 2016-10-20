@@ -14,9 +14,11 @@ get_template_part('content', 'header');
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="padder"></div>
+
 			<div class="container blog-container">
 				<div class="row">
 					<div class="col-md-12">
+						
 		<?php
 		while ( have_posts() ) : the_post();
 

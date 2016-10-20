@@ -476,7 +476,7 @@ input[name=woocommerce_checkout_place_order]{
 
 .fancy-sidebar{
 	position: absolute;
-	top: 560px;
+	top: 560px; /* query */
 	right: 0px;
 	z-index: 300;
 }
@@ -800,6 +800,9 @@ input[name=update_cart]{
 		margin: 0 auto;
 
 	}
+	.blog-container{
+		padding: 20px; 
+	}
 }
 
 /* No hover effect on iPads and smaller (info link) */
@@ -824,12 +827,18 @@ input[name=update_cart]{
 	.fuzzy{
 		padding: 0;
 	}
+	.fancy-sidebar{
+		top: 500px;
+	}
 
 }
 
 @media screen and (max-width: 700px){
 	.banner{
 		height: 300px;
+	}
+	.fancy-sidebar{
+		top: 390px;
 	}
 }
 
@@ -840,6 +849,18 @@ input[name=update_cart]{
 	}
 	.banner{
 		height: 200px;
+	}
+	.fancy-sidebar{
+		top: 260px;
+	}
+	.blog-container{
+		padding: 0px; 
+	}
+}
+
+@media screen and (max-width: 330px){
+	.fancy-sidebar{
+		top: 250px;
 	}
 }
 

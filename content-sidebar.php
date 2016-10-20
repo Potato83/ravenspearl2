@@ -1,8 +1,3 @@
-
-<!-- <div class="sidebar"> -->
- <?php //dynamic_sidebar( 'sidebar-1' ); ?>
-<!-- </div> -->
-
 <aside id="secondary" class="widget-area" role="complementary">
 
   <div class="col-sm-4 col-md-3 fancy-sidebar">
