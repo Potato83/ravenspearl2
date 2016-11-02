@@ -6,6 +6,7 @@
  *
  */
 ?><!DOCTYPE html>
+<!-- Site by Sam Vipond - sammypotato.com -->
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">

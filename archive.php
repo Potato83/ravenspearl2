@@ -25,7 +25,7 @@ get_template_part('content', 'header');
 			</header><!-- .page-header -->
 			<div class="container blog-container">
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-md-10 col-md-offset-1 blog-container index-container">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -47,11 +47,12 @@ get_template_part('content', 'header');
 
 		endif; ?>
 			</div><!-- col-md-8 -->
-					<div class="col-md-4">
-						<?php get_template_part('content', 'sidebar'); ?>
-					</div>
+					
+					
 				</div><!-- row -->
 			</div><!-- blog-container -->
+						<?php get_template_part('content', 'sidebar'); ?>
+			
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <div class="padder"></div>

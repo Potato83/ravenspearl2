@@ -1,3 +1,110 @@
+<!-- content-header js -->
+<header>
+	<?php get_template_part('content', 'menu'); ?>
+	<div class="container-fluid banner"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Raven's Pearl</a></div> 
+</header>
+	<div class="container-fluid main-container">
+		<div class="site-content">
+<script> 
+var blog = '<?php if ( is_home() || is_single() || is_archive() || is_search() || is_404()  ) {
+  echo "blog";
+} ?>';
+
+
+
+var hitherto = '<?php 
+
+
+$ref=@$_SERVER[HTTP_REFERER];
+	if (preg_match("/work/", $ref)) {
+    $referer = "work";
+    echo $referer;
+	} else if (preg_match("/ravenspearl/", $ref)){
+		$referer = "home";
+    echo $referer;
+	}else {
+		$referer = "elsewhere";
+    echo $referer;
+	}
+?>';	
+console.log(hitherto);
+
+var HereNow = '<?php echo get_page_template_slug( $post_id ); ?>';
+var blog = '<?php if ( is_home() || is_single() || is_archive() || is_search() || is_404()  ) {
+  echo "blog";
+} ?>';
+if(HereNow == 'page-gallery.php'){
+	HereNow = 'workpage';
+}
+if(blog == 'blog'){
+	HereNow = 'blog';
+}
+
+
+ if(hitherto == 'elsewhere'){
+	$(function() {
+		console.log('hitherto == "elsewhere"');
+		setTimeout(
+		  function() 
+		  {
+		    $('.banner').addClass('shrunk');
+		  }, 3975);
+   
+   setTimeout(
+		  function() 
+		  {
+		    $('html, body').animate({ scrollTop: 220 }, 1000);
+		  }, 3500);
+
+   // setTimeout(
+		 //  function() 
+		 //  {
+		 //    $('html, body').animate({ scrollTop: 225 }, 1000);
+		 //  }, 3500);
+    
+
+	});
+
+}else if (hitherto == "home" && HereNow == "workpage"){
+	$(function() {
+		//$('i.to-top').addClass('hide');
+    $('.banner').addClass('native-shrunk');
+    //$('html, body').animate({ scrollTop: 700 }, 500);
+    console.log('hitherto == "home" && HereNow == "workpage"');
+
+	});
+} else if (hitherto == 'home' ){
+	$(function() {
+		//$('i.to-top').addClass('hide');
+    $('.banner').addClass('native-shrunk');
+    $('html, body').animate({ scrollTop: 220 }, 500);
+    console.log('hitherto == "home"');
+
+	});
+} else if (hitherto == 'work' && HereNow == "workpage"){
+	$(function() {
+   $('.banner').addClass('native-shrunk');
+   //$('html, body').animate({ scrollTop: 700 }, 500);
+   console.log('hitherto == "work" && HereNow == "workpage"');
+  });
+} else if (hitherto == 'work'){
+	$(function() {
+   $('.banner').addClass('native-shrunk');
+   //console.log('no funny scroll today!');
+   $('html, body').animate({ scrollTop: 220 }, 500);
+   console.log('hitherto == "work"');
+  });
+}
+console.log(HereNow);
+</script>
+
+
+
+
+
+
+
+
 <!-- index.php -->
 
 <?php

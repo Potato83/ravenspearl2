@@ -254,4 +254,78 @@ function filter_media_comment_status( $open, $post_id ) {
 }
 add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
 
+/** SUBCATS TEST **/
+
+function woocommerce_subcats_from_parentcat_by_ID($parent_cat_ID) {
+
+   $args = array(
+
+       'hierarchical' => 1,
+
+       'show_option_none' => '',
+
+       'hide_empty' => 0,
+
+       'parent' => $parent_cat_ID,
+
+     'taxonomy' => 'product_cat'
+
+   );
+
+$subcats = get_categories($args);
+
+echo '<ul class="wooc_sclist">';
+
+foreach ($subcats as $sc) {
+
+       $link = get_term_link( $sc->slug, $sc->taxonomy );
+
+echo '<li><a href="'. $link .'">'.$sc->name.'</a></li>';
+
+     }
+
+echo '</ul>';
+
+}
+
+function woocommerce_subcats_from_parentcat_by_NAME($parent_cat_NAME) {
+
+$IDbyNAME = get_term_by('name', $parent_cat_NAME, 'product_cat');
+
+$product_cat_ID = $IDbyNAME->term_id;
+
+   $args = array(
+
+       'hierarchical' => 1,
+
+       'show_option_none' => '',
+
+       'hide_empty' => 0,
+
+       'parent' => $product_cat_ID,
+
+       'taxonomy' => 'product_cat'
+
+   );
+
+$subcats = get_categories($args);
+$subcats_array = array();
+
+
+foreach ($subcats as $sc) {
+
+       $link = get_term_link( $sc->slug, $sc->taxonomy );
+
+//echo '<li>'.$sc->name.'</li>';
+array_push($subcats_array, $sc->name);
+
+
+     }
+
+return $subcats_array;
+
+}
+
+/** End Subcats TEST **/
+
 

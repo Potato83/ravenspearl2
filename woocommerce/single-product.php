@@ -63,11 +63,20 @@ $parent=get_permalink();
 	if (preg_match("/tiles/", $parent)) {
     $dad = "tiles";
     //echo $dad;
-	} else if (preg_match("/sculpture/", $parent)){
-		$dad = "sculpture";
+	} else if (preg_match("/ceramic-sculpture/", $parent)){
+		$dad = "ceramic-sculpture";
     //echo $dad;
-	} else if (preg_match("/ceramic/", $parent)){
-		$dad = "ceramics";
+	} else if (preg_match("/fibers/", $parent)){
+		$dad = "fibers";
+    //echo $dad;
+	} else if (preg_match("/beads/", $parent)){
+		$dad = "beads";
+    //echo $dad;
+	} else if (preg_match("/costumes/", $parent)){
+		$dad = "costumes";
+    //echo $dad;
+	} else if (preg_match("/functional-ceramics/", $parent)){
+		$dad = "functional-ceramics";
     //echo $dad;
 	} else {
 		$dad = "";
@@ -75,7 +84,8 @@ $parent=get_permalink();
 	}
 ?>
 
-<a href="<?php echo esc_url( home_url( '/' ) ) . $dad ?>/#gallery">Back</a>
+<a href="<?php echo esc_url( home_url( '/' ) ) . $dad ?>/#gallery" >Back</a>
+
 	
 </div>
 <?php get_footer( 'shop' ); ?>

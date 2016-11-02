@@ -1,10 +1,16 @@
 <header>
 	<?php get_template_part('content', 'menu'); ?>
-	<div class="container-fluid banner"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Raven's Pearl</a></div> 
+	<div class="container-fluid banner"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"></a></div> 
 </header>
 	<div class="container-fluid main-container">
 		<div class="site-content">
 <script> 
+
+
+
+
+
+
 var hitherto = '<?php 
 
 
@@ -20,67 +26,66 @@ $ref=@$_SERVER[HTTP_REFERER];
     echo $referer;
 	}
 ?>';	
-console.log(hitherto);
-
-
-var HereNow = '<?php the_title(); ?>';
-if(HereNow == "tiles" || HereNow == "ceramics" || HereNow == "sculpture"){
-	HereNow = 'workpage';
+//console.log(hitherto);
+var wideness = $(window).width();
+if(wideness > 767){
+	wideness = "wide enough";
+	console.log(wideness);	
 }
 
- if(hitherto == 'elsewhere'){
+
+var HereNow = '<?php echo get_page_template_slug( $post_id ); ?>';
+var blog = '<?php if ( is_home() || is_single() || is_archive() || is_search() || is_404()  ) {
+  echo "blog";
+} ?>';
+if(HereNow == 'page-gallery.php'){
+	HereNow = 'workpage';
+}
+if(HereNow == 'page-contact.php'){
+	HereNow = 'blog';
+}
+if(blog == 'blog'){
+	HereNow = 'blog';
+}
+
+
+if(hitherto == 'elsewhere'){
 	$(function() {
-		//$('i.to-top').addClass('hide');
 		console.log('hitherto == "elsewhere"');
 		setTimeout(
 		  function() 
 		  {
 		    $('.banner').addClass('shrunk');
-		  }, 3475);
-   
-   setTimeout(
+		  }, 3975);
+   if(wideness == "wide enough"){
+   	setTimeout(
 		  function() 
 		  {
-		    $('html, body').animate({ scrollTop: 220 }, 2750);
-		  }, 1250);
-
-   // setTimeout(
-		 //  function() 
-		 //  {
-		 //    $('html, body').animate({ scrollTop: 225 }, 1000);
-		 //  }, 3500);
-    
-
+		    $('html, body').animate({ scrollTop: 220 }, 1000);
+		  }, 3400);
+   }
+   
 	});
-} else if (hitherto == "home" && HereNow == "workpage"){
+
+}else if (HereNow == "workpage"){
 	$(function() {
-		//$('i.to-top').addClass('hide');
     $('.banner').addClass('native-shrunk');
-    //$('html, body').animate({ scrollTop: 700 }, 500);
-    console.log('hitherto == "home" && HereNow == "workpage"');
-
+    console.log('HereNow == "workpage"');
 	});
-} else if (hitherto == 'home' ){
+}else if (HereNow == "blog"){
+	$('.banner').addClass('native-shrunk');
+	if(wideness == "wide enough"){
+		$('html, body').animate({ scrollTop: 775 }, 500);
+	}
+  console.log('HereNow == "blog"');
+}else if (hitherto == 'home' || hitherto == 'work'){
 	$(function() {
-		//$('i.to-top').addClass('hide');
     $('.banner').addClass('native-shrunk');
-    $('html, body').animate({ scrollTop: 220 }, 500);
-    console.log('hitherto == "home"');
-
+    if(wideness == "wide enough"){
+  	$('html, body').animate({ scrollTop: 220 }, 500);
+  	}    
+    console.log('hitherto == "work/home"');
 	});
-} else if (hitherto == 'work' && HereNow == "workpage"){
-	$(function() {
-   $('.banner').addClass('native-shrunk');
-   //$('html, body').animate({ scrollTop: 700 }, 500);
-   console.log('hitherto == "work" && HereNow == "workpage"');
-  });
-} else if (hitherto == 'work'){
-	$(function() {
-   $('.banner').addClass('native-shrunk');
-   //console.log('no funny scroll today!');
-   $('html, body').animate({ scrollTop: 220 }, 500);
-   console.log('hitherto == "work"');
-  });
 }
 console.log(HereNow);
 </script>

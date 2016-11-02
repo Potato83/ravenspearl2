@@ -73,8 +73,10 @@ $( document ).on( 'keydown', function ( e ) {
 
 
 $('.to-top').click(function(){
-  $('html, body').animate({ scrollTop: 220 }, 400);
+  $('html, body').animate({ scrollTop: 875 }, 400);
 });
+
+
 
 
 

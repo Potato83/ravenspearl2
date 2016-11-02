@@ -225,7 +225,8 @@ li.product-category > h3{
 	
 	height: 100vh;
 	background: #ccc;
-	background: url(http://ravenspearl.com/wp-content/uploads/2016/10/mUltifoRmer-1-e1476418122907.jpg) no-repeat;
+	/*background: url(http://ravenspearl.com/wp-content/uploads/2016/10/mUltifoRmer-1-e1476418122907.jpg) no-repeat;*/
+	background: url('../img/MultiFo.jpg') no-repeat;
 	background-size: 100%;
 	z-index: 2;
 	position: relative;
@@ -245,21 +246,13 @@ li.product-category > h3{
 	text-decoration: none;
 }
 
-.shrunk{
-	height: 450px;
-	transition: height 0.35s;
-}
-
-.native-shrunk{
-	height: 450px;
-}
-
 .main-covers{
 	margin: -75px auto 0px;
 }
 
 .gallery-thumb{
 	text-align: center;
+	margin-bottom: 50px;
 }
 
 .discipline{
@@ -497,6 +490,7 @@ input[name=woocommerce_checkout_place_order]{
   padding: 9px;  
   position: relative;
   width: 42px;
+  cursor: pointer;
 }
 
 .mini-submenu .icon-bar {
@@ -558,6 +552,7 @@ input[name=update_cart]{
 #slide-submenu > .fa{
 	z-index: 555;
 	position: relative;
+	cursor: pointer;
 }
 
 /* Comments */
@@ -861,6 +856,116 @@ input[name=update_cart]{
 @media screen and (max-width: 330px){
 	.fancy-sidebar{
 		top: 250px;
+	}
+}
+
+/* queries for banner */
+
+
+
+
+
+
+
+@media (max-width: 768px){
+	.shrunk{
+		height: 450px;
+		transition: height 0.35s;
+	}
+	.native-shrunk{
+		height: 450px;
+	}
+}
+
+@media (max-width: 625px){
+	.main-covers{
+		margin: -200px auto 0px;
+	}
+}
+
+@media (max-width: 500px){
+	.shrunk{
+		height: 350px;
+		transition: height 0.35s;
+	}
+	.native-shrunk{
+		height: 350px;
+	}
+	.main-covers{
+		margin: -275px auto 0px;
+	}
+}
+
+@media (max-width: 414px){
+	.shrunk{
+		height: 250px;
+		transition: height 0.35s;
+	}
+	.native-shrunk{
+		height: 250px;
+	}
+	.main-covers{
+		margin: -100px auto 0px;
+	}
+}
+
+@media (min-width: 769px){
+	.shrunk{
+		height: 500px;
+		transition: height 0.35s;
+	}
+	.native-shrunk{
+		height: 500px;
+	}
+}
+
+@media (min-width: 850px){
+	.shrunk{
+		height: 600px;
+		transition: height 0.35s;
+	}
+	.native-shrunk{
+		height: 600px;
+	}
+}
+
+@media (min-width: 1024px){
+	.shrunk{
+		height: 700px;
+		transition: height 0.35s;
+	}
+	.native-shrunk{
+		height: 700px;
+	}
+}
+
+@media (min-width: 1200px){
+	.shrunk{
+		height: 800px;
+		transition: height 0.35s;
+	}
+	.native-shrunk{
+		height: 800px;
+	}
+}
+
+@media (min-width: 1375px){
+	.shrunk{
+		height: 900px;
+		transition: height 0.35s;
+	}
+	.native-shrunk{
+		height: 900px;
+	}
+}
+
+@media (min-width: 1550px){
+	.shrunk{
+		height: 1100px;
+		transition: height 0.35s;
+	}
+	.native-shrunk{
+		height: 1100px;
 	}
 }
 

@@ -15,5 +15,6 @@ get_template_part('content', 'header');
 	<?php get_template_part('content', 'covers'); ?>
 
 </section><!-- #home-page -->
-
+<div class="padder"></div>
+<div class="padder"></div>
 <?php get_footer(); ?>
