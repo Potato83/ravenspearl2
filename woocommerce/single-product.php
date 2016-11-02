@@ -56,35 +56,29 @@ get_header( 'shop' ); ?>
 		//do_action( 'woocommerce_sidebar' );
 	?>
 <div class="center">
-	<?php 
+	
 
+<?php
 
-$parent=get_permalink();
-	if (preg_match("/tiles/", $parent)) {
-    $dad = "tiles";
-    //echo $dad;
-	} else if (preg_match("/ceramic-sculpture/", $parent)){
-		$dad = "ceramic-sculpture";
-    //echo $dad;
-	} else if (preg_match("/fibers/", $parent)){
-		$dad = "fibers";
-    //echo $dad;
-	} else if (preg_match("/beads/", $parent)){
-		$dad = "beads";
-    //echo $dad;
-	} else if (preg_match("/costumes/", $parent)){
-		$dad = "costumes";
-    //echo $dad;
-	} else if (preg_match("/functional-ceramics/", $parent)){
-		$dad = "functional-ceramics";
-    //echo $dad;
-	} else {
-		$dad = "";
-    //echo $dad;
-	}
+global $post;
+$terms = wp_get_post_terms( $post->ID, 'product_cat' );
+foreach ( $terms as $term ) $categories[] = $term->slug;
+
+// echo $categories[0];
+// echo '</br>';
+// echo $categories[1];
+// echo '</br>';
+
+if(count($categories) == 1){
+	$dad = $categories[0] . '/#gallery';
+}
+
+if (count($categories) == 2){
+	$dad = $categories[1] . '/#' . $categories[0];
+}
+
 ?>
-
-<a href="<?php echo esc_url( home_url( '/' ) ) . $dad ?>/#gallery" >Back</a>
+<a href="<?php echo esc_url( home_url( '/' ) ) . $dad ?>" >Back</a>
 
 	
 </div>

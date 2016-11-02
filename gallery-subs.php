@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Gallery TEST
+Template Name: Gallery Subs
  */
 get_header();
 get_template_part('content', 'header-lite');
@@ -15,22 +15,27 @@ get_template_part('content', 'header-lite');
 	<div class="work-title"><?php echo $title =  get_the_title(); ?></div>
 </div>
 <?php $subcats = woocommerce_subcats_from_parentcat_by_NAME($title);
+if(count($subcats === 200)){
+	echo count($subcats) . 'hmm';
 	for ($i=0; $i < count($subcats); $i++) { 
-		$args = array(  'post_type' => 'product', 
+		
+			$args = array(  'post_type' => 'product', 
  								'product_cat' => $subcats[$i],
  								'posts_per_page' => -1,
  								'columns' => '3', 
  								'orderby' => 'menu_order',
  								'order' => 'ASC' 							
  								);
+		
+		
  
 $loop = new WP_Query( $args ); ?>
+
 <div class="work-title"><?php echo $subcats[$i]; ?></div>
 <?php while ( $loop->have_posts() ) : $loop->the_post();
 
   if(has_post_thumbnail()){ ?>
   <ul>
-<!-- <li><?php echo $subcats[$i] . "I: " . $i; ?></li>		 -->
 		<li class="product col-md-4">
 		<a href="<?php echo the_post_thumbnail_url(); ?>" data-rel="lightbox" ><div class="thumb darken">
 	<?php
@@ -46,6 +51,10 @@ $loop = new WP_Query( $args ); ?>
 
 <?php endwhile;
 	}
+}else{
+	echo "no";
+}
+	
 
 ?>
 <?php

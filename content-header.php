@@ -61,7 +61,7 @@ if(hitherto == 'elsewhere'){
    	setTimeout(
 		  function() 
 		  {
-		    $('html, body').animate({ scrollTop: 220 }, 1000);
+		    $('html, body').animate({ scrollTop: 520 }, 1000);
 		  }, 3400);
    }
    

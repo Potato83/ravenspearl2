@@ -469,7 +469,7 @@ input[name=woocommerce_checkout_place_order]{
 
 .fancy-sidebar{
 	position: absolute;
-	top: 560px; /* query */
+	top: 1000px; /* query */
 	right: 0px;
 	z-index: 300;
 }
@@ -967,6 +967,20 @@ input[name=update_cart]{
 	.native-shrunk{
 		height: 1100px;
 	}
+}
+
+/*.testy-row{
+	background: red;
+	border: 1px solid yellow;
+	box-sizing: border-box;
+}*/
+
+.testy-row-blank{
+	/*background: blue;*/
+	min-height: 400px; /* query? */
+	width: 33.33%;
+	/*border: 1px solid white;
+	box-sizing: border-box;*/
 }
 
 
