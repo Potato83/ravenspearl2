@@ -68,13 +68,19 @@ foreach ( $terms as $term ) $categories[] = $term->slug;
 // echo '</br>';
 // echo $categories[1];
 // echo '</br>';
+$string = get_the_title();
+$string = str_replace(' ', '', $string);
+//echo $string;
+
 
 if(count($categories) == 1){
-	$dad = $categories[0] . '/#gallery';
+	// $dad = $categories[0] . '/#gallery0';
+	$dad = $categories[0] . '/#' . $string;
 }
 
 if (count($categories) == 2){
-	$dad = $categories[1] . '/#' . $categories[0];
+	// $dad = $categories[1] . '/#' . $categories[0];
+	$dad = $categories[1] . '/#' . $string;
 }
 
 ?>

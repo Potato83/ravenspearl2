@@ -22,7 +22,7 @@
                 <!-- <li class="spacer">&bull;</li> -->
                 <li class="link-spoof" id="two">Artist Statement</li>
                 <!-- <li class="spacer">&bull;</li> -->
-                <li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ); ?>">Blog</a></li>
+                <!-- <li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ); ?>">Blog</a></li> -->
                 <!-- <li class="spacer">&bull;</li> -->
                 <li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Contact' ) ) ); ?>">Contact</a></li>
               </ul>

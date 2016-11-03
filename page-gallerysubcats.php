@@ -14,9 +14,11 @@ get_template_part('content', 'header');
 <div class="fullwidth">
 	<div class="work-title"><?php echo $title =  get_the_title(); ?></div>
 </div>
+<div class="container">
 <?php $subcats = woocommerce_subcats_from_parentcat_by_NAME($title);
 
-	for ($i=count($subcats)-1; $i >= 0 ; $i--){
+	// for ($i=count($subcats)-1; $i >= 0 ; $i--){
+	for ($i=0; $i < count($subcats) ; $i++){
 		
 			$args = array(  'post_type' => 'product', 
  								'product_cat' => $subcats[$i],
@@ -27,21 +29,22 @@ get_template_part('content', 'header');
  								);
 	
 $loop = new WP_Query( $args ); ?>
-<!-- <div class="clearfix"></div> -->
-<div class="container">
-<div class="row">
-	<p id="<?php echo $subcats[$i]; ?>"></p>
-	<div class="work-title"><?php echo $subcats[$i]; ?></div>
 
+<div class="row">
+	<p id="gallery<?php echo $i+1; ?>"></p>
+	<p id="<?php echo $subcats[$i]; ?>"></p>
+	<div class="work-sub-title"><?php echo $subcats[$i]; ?></div>
+	
 <?php $j = 1; ?>
 <?php while ( $loop->have_posts() ) : $loop->the_post();
 
 
   
-  if(has_post_thumbnail()){ ?>
-
+  if(has_post_thumbnail()){ 
+		$string = get_the_title();
+		$string = str_replace(' ', '', $string); ?>
 		
-		<li class="product col-md-4 testy-row">
+		<li class="product col-md-4 testy-row" id="<?php echo $string; ?>">
 		<a href="<?php echo the_post_thumbnail_url(); ?>" data-rel="lightbox" ><div class="thumb darken">
 	<?php
 		echo the_post_thumbnail( 'full', array('class' => 'img-responsive'));
@@ -64,23 +67,28 @@ if($j % 3 == 0){
 	
 	$num = $loop->post_count;
 	if($num % 3 === 0){
-		echo '';
+		echo '</div>';
 	} 
 	if($num % 3 === 1){
 		echo '<li class=" col-md-4 testy-row-blank"></li>';
 		echo '<li class=" col-md-4 testy-row-blank"></li>';
+		echo '</div>';
+		echo '<div class="clearfix"></div>';
 
 	}
 	if($num % 3 === 2){
 		echo '<li class=" col-md-4 testy-row-blank"></li>';
+		echo '</div>';
+		echo '<div class="clearfix"></div>';
 	}
 
- echo '<div class="clearfix"></div>';
+ 
 }
 
 
 ?>
-</div><!-- container -->
+
+
 <?php
 
 

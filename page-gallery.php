@@ -10,7 +10,7 @@ get_template_part('content', 'header');
 
 <div class="cover-padder"></div>
 <?php get_template_part('content', 'covers'); ?>
-<p id="gallery"></p>
+<p id="gallery1"></p>
 <div class="fullwidth">
 	<div class="work-title"><?php echo $title =  get_the_title(); ?></div>
 </div>
@@ -29,9 +29,10 @@ $loop = new WP_Query( $args ); ?>
 <div class="row">
 <?php $j = 1; ?>
 <?php while ( $loop->have_posts() ) : $loop->the_post();
-  if(has_post_thumbnail()){ ?>
-	
-		<li class="product col-md-4 testy-row">
+  if(has_post_thumbnail()){ 
+		$string = get_the_title();
+		$string = str_replace(' ', '', $string); ?>
+		<li class="product col-md-4 testy-row" id="<?php echo $string; ?>">
 		<a href="<?php echo the_post_thumbnail_url(); ?>" data-rel="lightbox" ><div class="thumb darken">
 	<?php
 		echo the_post_thumbnail( 'full', array('class' => 'img-responsive'));
