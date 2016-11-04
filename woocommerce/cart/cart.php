@@ -166,3 +166,17 @@ do_action( 'woocommerce_before_cart' ); ?>
 </div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
+
+<script type="text/javascript">
+	$(function() {
+    var wideness = $(window).width();
+		if(wideness > 767){
+			wideness = "wide enough";
+			console.log(wideness + " (cart)");	
+		}
+		console.log('cart.php');
+    if(wideness == "wide enough"){
+  		$('html, body').animate({ scrollTop: 975 }, 500);
+  	}    
+	});
+</script>

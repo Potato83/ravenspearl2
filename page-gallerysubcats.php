@@ -12,7 +12,7 @@ get_template_part('content', 'header');
 <?php get_template_part('content', 'covers'); ?>
 
 <div class="fullwidth">
-	<div class="work-title"><?php echo $title =  get_the_title(); ?></div>
+	<div class="work-title-sub"><?php echo $title =  get_the_title(); ?></div>
 </div>
 <div class="container">
 <?php $subcats = woocommerce_subcats_from_parentcat_by_NAME($title);
@@ -31,8 +31,8 @@ get_template_part('content', 'header');
 $loop = new WP_Query( $args ); ?>
 
 <div class="row">
-	<p id="gallery<?php echo $i+1; ?>"></p>
-	<p id="<?php echo $subcats[$i]; ?>"></p>
+	<p id="gallery<?php echo $i+1; ?>" class="anchor-p"></p>
+	<p id="<?php echo $subcats[$i]; ?>" class="anchor-p"></p>
 	<div class="work-sub-title"><?php echo $subcats[$i]; ?></div>
 	
 <?php $j = 1; ?>

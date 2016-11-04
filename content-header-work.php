@@ -15,7 +15,7 @@ $(function() {
     	console.log('content-header-work wide hello');
     	
 		}else{
-			$('html, body').animate({ scrollTop: 600 }, 400);
+			$('html, body').animate({ scrollTop: 300 }, 400);
     	console.log('content-header-work narrow hello');
     	
 		}

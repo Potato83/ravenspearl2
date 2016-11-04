@@ -83,6 +83,11 @@ if (count($categories) == 2){
 	$dad = $categories[1] . '/#' . $string;
 }
 
+if (count($categories) == 3){
+	// $dad = $categories[1] . '/#' . $categories[0];
+	$dad = $categories[0] . '/#' . $string;
+}
+
 ?>
 <a href="<?php echo esc_url( home_url( '/' ) ) . $dad ?>" >Back</a>
 

@@ -22,6 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 get_template_part('content', 'header-work'); ?>
+<!-- added to cart msg usually goes here -->
 <?php
 	/**
 	 * woocommerce_before_single_product hook.
@@ -34,10 +35,13 @@ get_template_part('content', 'header-work'); ?>
 	 	echo get_the_password_form();
 	 	return;
 	 }
-?>
+?> <!-- end added to cart message -->
 
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="single-prod-img">
+	
+	
+
 	<?php
 		/**
 		 * woocommerce_before_single_product_summary hook.
@@ -50,6 +54,8 @@ get_template_part('content', 'header-work'); ?>
 	?>
 	</div>
 	<div class="summary entry-summary">
+
+
 		
 		<?php //echo 'hello this is woocommerce/content-single-product.php ya know';
 			/**
@@ -67,6 +73,10 @@ get_template_part('content', 'header-work'); ?>
 		?>
 
 	</div><!-- .summary -->
+
+
+
+
 
 	<?php
 		/**

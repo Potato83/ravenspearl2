@@ -38,7 +38,7 @@ var HereNow = '<?php echo get_page_template_slug( $post_id ); ?>';
 var blog = '<?php if ( is_home() || is_single() || is_archive() || is_search() || is_404()  ) {
   echo "blog";
 } ?>';
-if(HereNow == 'page-gallery.php' || HereNow == 'page-gallerysubcats.php'){
+if(HereNow == 'page-gallery.php' || HereNow == 'page-gallerysubcats.php' || HereNow == 'page-subsub.php'){
 	HereNow = 'workpage';
 }
 if(HereNow == 'page-contact.php'){
