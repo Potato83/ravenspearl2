@@ -2369,12 +2369,19 @@ $(function() {
     var high = $(this).attr('height');
     var wide = $(this).attr('width');
     var texty = $(this).closest('a').next('a');
+    var diff = wide - high;
+    var size = "'w: " + wide + " h: " + high + " diff: " + diff + "'";
+    
     if(high > wide){
       console.log("wide");
-      $(this).addClass("fuzzy");
+
+      $(this).addClass("fuzzyyy actually-tall");
+      $(this).addClass(size);
       $(texty).addClass("wuzzy");
-    } else if (wide > high){
+    } if (wide > high){
       console.log("tall");
+      $(this).addClass("not-fuzzy actually-wide");
+      $(texty).addClass("wuzzy wuzzy-else");
     }
   });
 
@@ -2384,7 +2391,8 @@ $(function() {
       var path = '#bio-' + $butt.attr('id');
       $butt.click(function(){
         $(path).fadeIn(400).removeClass('hide').promise().done(function(){
-          $('body').addClass('no-scroll');
+          
+          $('.container-fluid').addClass('hide');
         });
         
       });
@@ -2392,8 +2400,8 @@ $(function() {
 
     $('.closer').click(function(){
       $( '.bio' ).fadeOut(400);
-      $('body').removeClass('no-scroll');
-
+      //$('body').removeClass('no-scroll');
+      $('.container-fluid').removeClass('hide');
     });
 
     //sidebar
@@ -2420,8 +2428,8 @@ $(function() {
 $( document ).on( 'keydown', function ( e ) {
     if ( e.keyCode === 27 ) { // ESC
         $( '.bio' ).fadeOut(400);
-      	$('body').removeClass('no-scroll');   	
-      
+      	//$('body').removeClass('no-scroll');   	
+        $('.container-fluid').removeClass('hide');
   	}
 });
 

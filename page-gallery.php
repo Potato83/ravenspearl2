@@ -41,7 +41,7 @@ $loop = new WP_Query( $args ); ?>
 		echo '';
 	} ?>
 		
-		<a href="<?php echo the_permalink(); ?>" class="clearfix">info</a>
+		<div class="info-box"><a href="<?php echo the_permalink(); ?>" class="clearfix">info</a></div>
 	</li>
 	<?php 
 

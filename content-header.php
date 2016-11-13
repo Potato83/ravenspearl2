@@ -52,6 +52,9 @@ if(blog == 'blog'){
 if(hitherto == 'elsewhere'){
 	$(function() {
 		console.log('hitherto == "elsewhere"');
+		if(wideness > 768){
+			$('.link-spoof').addClass('noclick');
+		}		
 		setTimeout(
 		  function() 
 		  {
@@ -63,6 +66,11 @@ if(hitherto == 'elsewhere'){
 		  {
 		    $('html, body').animate({ scrollTop: 520 }, 1000);
 		  }, 3400);
+   	setTimeout(
+		  function() 
+		  {
+		    $('.link-spoof').removeClass('noclick');
+		  }, 4400);
    }
    
 	});

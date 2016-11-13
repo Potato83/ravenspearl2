@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="<?=get_template_directory_uri()?>/assets/css/font-awesome/css/font-awesome.min.css" />
 <!-- <link href="https://fonts.googleapis.com/css?family=Poly" rel="stylesheet"> -->
 <link href="https://fonts.googleapis.com/css?family=Gentium+Basic|Poly" rel="stylesheet">
+<meta name="google-site-verification" content="-3P57WQWQg-sl1xw6_vl6-6tjBPwJosHWSUgKh-uqPU" />
 <?php wp_head(); ?>
 <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>

@@ -361,7 +361,7 @@ li.product-category > h3{
 }
 
 .bio{
-	height: 100vh;
+	min-height: 100vh;
 	width: 100vw;
 	position: absolute;
 	top: 0;
@@ -371,7 +371,14 @@ li.product-category > h3{
 	color: #fff;
 	text-align: center;
 	padding: 90px;
-	
+	overflow-y: scroll;
+	z-index: 100;
+}
+
+@media screen and (max-width: 414px){
+	.bio{
+		padding: 25px;
+	}
 }
 
 .bio > p{
@@ -387,19 +394,29 @@ li.product-category > h3{
   top: 0;
   left: 0;
   bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
+  right: 0px;
+  position: fixed;
+  z-index: -1; 
+
 }
 
 .closer{
 	font-size: 28px !important;
 	color: #eee;
-	position: absolute;
-	top: 0;
+	position: fixed;
+	top: 0px;
 	left: 0;
 	padding: 15px;
 	z-index: 5;
+	cursor: pointer;
+}
+
+.container-fluid{
+	z-index: 1;
+}
+
+.logged-in .closer{
+	top: 25px;
 }
 
 
@@ -432,6 +449,12 @@ input[name=woocommerce_checkout_place_order]{
 .contact-container{
 	background: url(http://ravenspearl.com/wp-content/uploads/2016/10/IMGP9302.jpg) no-repeat;
 	background-size: cover;
+}
+
+@media (max-width: 570px){
+	.contact-container{
+		padding: 0 10px !important;
+	}
 }
 
 .index-container{
@@ -694,7 +717,7 @@ input[name=update_cart]{
 		text-align: center;
 	}
 	li.product.col-md-4 > a > div > img{
-		max-height: 350px;
+		max-height: 400px;
 		width: auto;
 		margin: 0 auto;
 	}
@@ -709,13 +732,34 @@ input[name=update_cart]{
 	}
 }
 
-@media (min-width: 768px) and (max-width: 1023px){
+@media (min-width: 768px) and (max-width: 991px){
 	li.product.col-md-4{
 		min-height: 400px;
 		text-align: center;
 	}
 	li.product.col-md-4 > a > div > img{
-		max-height: 350px;
+		max-height: 400px;
+		width: auto;
+		margin: 0 auto;
+	}
+	li.link-spoof{
+		margin: 0 15px;
+		right: 15px;
+	}
+	.bio::after {
+	  background-size: 100%;
+	  background-size: 200vw 100vh;
+	  left: -50vw;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1023px){
+	li.product.col-md-4{
+		min-height: 230px;
+		text-align: center;
+	}
+	li.product.col-md-4 > a > div > img{
+		max-height: 230px;
 		width: auto;
 		margin: 0 auto;
 	}
@@ -726,11 +770,11 @@ input[name=update_cart]{
 
 @media (min-width: 1024px) and (max-width: 1149px){
 	li.product.col-md-4{
-		min-height: 400px;
+		min-height: 260px;
 		text-align: center;
 	}
 	li.product.col-md-4 > a > div > img{
-		max-height: 350px;
+		max-height: 260px;
 		width: auto;
 		margin: 0 auto;
 	}
@@ -739,14 +783,26 @@ input[name=update_cart]{
 	}
 }
 
-
-@media (min-width: 1150px) and (max-width: 1279px){
+@media (min-width: 1150px) and (max-width: 1199px){
 	li.product.col-md-4{
-		min-height: 450px;
+		min-height: 270px;
 		text-align: center;
 	}
 	li.product.col-md-4 > a > div > img{
-		max-height: 410px;
+		max-height: 270px;
+	}
+	.wuzzy{
+		top: -75px;
+	}
+}
+
+@media (min-width: 1200px) and (max-width: 1279px){
+	li.product.col-md-4{
+		min-height: 310px;
+		text-align: center;
+	}
+	li.product.col-md-4 > a > div > img{
+		max-height: 310px;
 		width: auto;
 		margin: 0 auto;
 	}
@@ -757,11 +813,11 @@ input[name=update_cart]{
 
 @media (min-width: 1280px) and (max-width: 1399px){
 	li.product.col-md-4{
-		min-height: 450px;
+		min-height: 350px;
 		text-align: center;
 	}
 	li.product.col-md-4 > a > div > img{
-		max-height: 450px;
+		max-height: 350px;
 		width: auto;
 		margin: 0 auto;
 	}
@@ -1050,6 +1106,26 @@ input[name=update_cart]{
 		top: 50px;
 	}
 }
+
+.product.testy-row{
+	/*background: green;
+	border: 1px solid red;
+	box-sizing: border-box;*/
+	margin-bottom: 20px;
+}
+
+.info-box{
+	padding: 0 100px;
+}
+
+.info-box:hover{
+	/*background: rgba(0,0,0,0.5);	*/
+}
+
+.noclick{
+	pointer-events: none;
+}
+
 
 
 

@@ -17,7 +17,7 @@ get_template_part('content', 'header'); ?>
 
 	for ($i=0; $i < count($subcats) ; $i++){ ?>
 
-	<div class="row">
+	<div class="row moose">
 	<p id="gallery<?php echo $i+1; ?>" class="anchor-p"></p>
 	<p id="<?php echo $subcats[$i]; ?>" class="anchor-p"></p>
 
@@ -28,8 +28,9 @@ get_template_part('content', 'header'); ?>
 		for ($k=0; $k < count($inner_subcats); $k++){ ?>
 			
 			<div class="work-sub-title-2"><?php echo $inner_subcats[$k]; ?></div>
+			<div class="row"><!-- test -->
 			<?php $inner_args = array(  'post_type' => 'product',
- 								'product_cat' => $inner_subcats[$k],
+ 								'product_cat' => $inner_subcats[$k]. '-' . $subcats[$i],
  								'posts_per_page' => -1,
  								'columns' => '3', 
  								'orderby' => 'menu_order',
@@ -52,7 +53,7 @@ get_template_part('content', 'header'); ?>
 						} else{
 							echo '';
 						}?>
-						<a href="<?php echo the_permalink(); ?>" class="clearfix">info</a>
+						<div class="info-box"><a href="<?php echo the_permalink(); ?>" class="clearfix">info</a></div>
 					</li>
 			
 			<?php
