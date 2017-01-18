@@ -65,7 +65,8 @@ if(hitherto == 'elsewhere'){
    	setTimeout(
 		  function() 
 		  {
-		    $('html, body').animate({ scrollTop: 520 }, 1000);
+		    // $('html, body').animate({ scrollTop: 520 }, 1000);
+		    console.log("this one here buddeh - no longer autoscrolls");
 		  }, 3400);
    	setTimeout(
 		  function() 
