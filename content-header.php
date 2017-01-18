@@ -28,6 +28,7 @@ $ref=@$_SERVER[HTTP_REFERER];
 ?>';	
 //console.log(hitherto);
 var wideness = $(window).width();
+var the_width = wideness;
 if(wideness > 767){
 	wideness = "wide enough";
 	console.log(wideness);	
@@ -82,10 +83,15 @@ if(hitherto == 'elsewhere'){
 	});
 }else if (HereNow == "blog"){
 	$('.banner').addClass('native-shrunk');
-	if(wideness == "wide enough"){
+	if(wideness == "wide enough" && the_width != 1024){
 		$('html, body').animate({ scrollTop: 975 }, 500); // query screen size?
+		console.log('HereNow == "blog"' + the_width);
 	}
-  console.log('HereNow == "blog"');
+	if(the_width == 1024){
+		$('html, body').animate({ scrollTop: 750 }, 500);
+		console.log('HereNow == "blog, iPad"');
+	}
+  
 }else if (hitherto == 'home' || hitherto == 'work'){
 	$(function() {
     $('.banner').addClass('native-shrunk');

@@ -368,6 +368,7 @@ li.product-category > h3{
 	left: 0;
 	z-index: 999;
 	background: rgba(0,0,0,0.95);
+	background: black;
 	color: #fff;
 	text-align: center;
 	padding: 90px;
