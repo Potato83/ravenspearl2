@@ -84,6 +84,25 @@ $('.to-top').click(function(){
   $('html, body').animate({ scrollTop: 875 }, 400);
 });
 
+// $('#scroll-down').click(function(){
+
+// })
+
+
+$('#scroll-down').on('click', function(e){
+    console.log('clicked');
+    scrollToSection( $('#begin-content'));
+    
+    return false;
+  });
+
+function scrollToSection(){
+  var scroll_to = $('#begin-content').offset().top;
+  $('html, body').animate({ scrollTop: scroll_to }, 300, function(){
+    window.location.hash = $('#begin-content');
+
+  } );
+}
 
 
 

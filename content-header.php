@@ -1,9 +1,16 @@
 <header>
 	<?php get_template_part('content', 'menu'); ?>
-	<div class="container-fluid banner"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"></a></div> 
+	<div class="container-fluid banner"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"></a>
+		<div id="scroll-down">
+	    <i class="fa fa-angle-down"></i>
+	  </div>
+	</div> 
+	  
 </header>
+	<div id="begin-content"></div>
 	<div class="container-fluid main-container">
 		<div class="site-content">
+			
 <script> 
 
 
@@ -54,7 +61,8 @@ if(hitherto == 'elsewhere'){
 	$(function() {
 		console.log('hitherto == "elsewhere"');
 		if(wideness > 768){
-			$('.link-spoof').addClass('noclick');
+			// $('.link-spoof').addClass('noclick');
+			console.log('formerly noclick');
 		}		
 		setTimeout(
 		  function() 
@@ -97,7 +105,8 @@ if(hitherto == 'elsewhere'){
 	$(function() {
     $('.banner').addClass('native-shrunk');
     if(wideness == "wide enough"){
-  	$('html, body').animate({ scrollTop: 220 }, 500);
+  	// $('html, body').animate({ scrollTop: 220 }, 500);
+  	console.log("formerly short scroll");
   	}    
     console.log('hitherto == "work/home"');
 	});
