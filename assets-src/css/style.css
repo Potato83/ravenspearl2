@@ -390,7 +390,7 @@ li.product-category > h3{
 
 .bio::after {
   content: "";
-  background: url(http://ravenspearl.com/wp-content/uploads/2016/10/mUltifoRmer-1-e1476418122907.jpg) no-repeat;
+  background: url(https://ravenspearl.com/wp-content/uploads/2016/10/mUltifoRmer-1-e1476418122907.jpg) no-repeat;
   background-size: 100%;
   background-size: 100vw 100vh;
   opacity: 0.5;
@@ -450,7 +450,7 @@ input[name=woocommerce_checkout_place_order]{
 }
 
 .contact-container{
-	background: url(http://ravenspearl.com/wp-content/uploads/2016/10/IMGP9302.jpg) no-repeat;
+	background: url(https://ravenspearl.com/wp-content/uploads/2016/10/IMGP9302.jpg) no-repeat;
 	background-size: cover;
 }
 
@@ -461,7 +461,7 @@ input[name=woocommerce_checkout_place_order]{
 }
 
 .index-container{
-	background: url(http://ravenspearl.com/wp-content/uploads/2016/09/IMGP9271.jpg) no-repeat;
+	background: url(https://ravenspearl.com/wp-content/uploads/2016/09/IMGP9271.jpg) no-repeat;
 	background-size: cover;
 }
 
