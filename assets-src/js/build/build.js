@@ -2463,7 +2463,7 @@ $('#scroll-down').on('click', function(e){
 function scrollToSection(){
   var scroll_to = $('#begin-content').offset().top;
   $('html, body').animate({ scrollTop: scroll_to }, 400, function(){
-    window.location.hash = $('#begin-content');
+    window.location.hash = '';
 
   } );
 }
