@@ -2455,15 +2455,15 @@ $('.to-top').click(function(){
 
 $('#scroll-down').on('click', function(e){
     console.log('clicked');
-    scrollToSection( $('#begin-content'));
+    scrollToSection( $('#disciplines'));
     
     return false;
   });
 
 function scrollToSection(){
-  var scroll_to = $('#begin-content').offset().top;
+  var scroll_to = $('#disciplines').offset().top;
   $('html, body').animate({ scrollTop: scroll_to }, 400, function(){
-    window.location.hash = '';
+    window.location.hash = '#disciplines';
 
   } );
 }
